@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 13:30:41 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/23 17:21:27 by hmaciel-         ###   ########.fr       */
+/*   Created: 2023/01/24 11:17:21 by hmaciel-          #+#    #+#             */
+/*   Updated: 2023/01/24 14:47:54 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_count_words(char const *s, char c)
 {
-	int	i;
-	int	number;
-	int	minus;
+	int	words;
+	int	index;
+	int	is_new;
 
-	minus = 1;
-	number = 0;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f'
-		|| str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
+	is_new = 1;
+	index = 0;
+	words = 0;
+	while (s[index])
 	{
-		i++;
+		if (s[index] == c)
+			is_new = 1;
+		if (s[index] != c && is_new)
+		{
+			words++;
+			is_new = 0;
+		}
+		index++;
 	}
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			minus *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		number = number * 10 + (str[i] - '0');
-		i++;
-	}
-	return (number * minus);
+	return (words);
 }

@@ -6,7 +6,7 @@
 #    By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/06 15:56:37 by hmaciel-          #+#    #+#              #
-#    Updated: 2023/01/23 17:07:50 by hmaciel-         ###   ########.fr        #
+#    Updated: 2023/01/24 12:45:30 by hmaciel-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS		=	ft_printf/ft_printf.c ft_printf/ft_printf_chars.c ft_printf/ft_printf_nu
 				libft/ft_putstr_fd.c libft/ft_strjoin.c libft/ft_strtrim.c libft/ft_striteri.c libft/ft_strmapi.c \
 				libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c \
 				libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c \
-				extras/ft_get_digits.c extras/ft_str_is_numeric.c extras/ft_cmp.c extras/ft_atoll.c
+				extras/ft_get_digits.c extras/ft_str_is_numeric.c extras/ft_cmp.c extras/ft_atoll.c extras/ft_count_words.c
 
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror

@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:21:17 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/23 16:51:19 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:17:47 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,6 @@ int				ft_get_digits(long long int nb);
 int				ft_cmp(int a, int b);
 int				ft_str_is_numeric(char *str);
 long long		ft_atoll(const char *str);
+int				ft_count_words(char const *s, char c);
 
 #endif
