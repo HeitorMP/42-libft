@@ -88,7 +88,7 @@ Install libft with make
 ```
 This will generate the libft.a library!
     
-## What i learn:
+## What i learned:
 
  - C programming
  - Basic algorithms
