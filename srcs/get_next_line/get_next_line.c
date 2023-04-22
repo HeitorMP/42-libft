@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmaciel- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:29:01 by hmaciel-          #+#    #+#             */
-/*   Updated: 2022/12/11 20:39:19 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/04/22 08:16:08 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static char	*get_line(char *str)
 	len = 0;
 	while (str[len] != '\n' && str[len] != '\0')
 		len++;
-	line = ft_calloc(len, sizeof(char) + 1 + 1);
+	line = ft_calloc(len + 1 + 1, sizeof(char));
 	len = 0;
 	while (str[len] != '\n' && str[len] != '\0')
 	{
@@ -31,10 +31,7 @@ static char	*get_line(char *str)
 		len++;
 	}
 	if (str[len] == '\n')
-	{
 		line[len] = '\n';
-		len++;
-	}
 	return (line);
 }
 
@@ -99,7 +96,11 @@ char	*get_next_line(int fd)
 	static char		*str;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
+	{
+		if (str)
+			free(str);
 		return (NULL);
+	}
 	str = get_buffer(str, fd);
 	line = get_line(str);
 	if (!line)
